@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace treestoneit\LaravelConvergeApi\Tests;
 
 class ExampleTest extends TestCase
 {

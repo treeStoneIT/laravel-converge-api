@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace Treestoneit\LaravelConvergeApi\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelConvergeApiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-converge-api';
 
     public $description = 'My command';
 
