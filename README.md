@@ -1,4 +1,4 @@
-# Laravel wrapper for Converge's payment API
+# Laravel Elavon / Converge API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/treestoneit/laravel-converge-api.svg?style=flat-square)](https://packagist.org/packages/treestoneit/laravel-converge-api)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/treestoneit/laravel-converge-api/run-tests?label=tests)](https://github.com/treestoneit/laravel-converge-api/actions?query=workflow%3ATests+branch%3Amaster)
@@ -6,15 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/treestoneit/laravel-converge-api.svg?style=flat-square)](https://packagist.org/packages/treestoneit/laravel-converge-api)
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/package-laravel-converge-api-laravel.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/package-laravel-converge-api-laravel)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+A simple, easy to use Laravel wrapper for Elavon's Converge API via key value pairs instead of XML.
 
 ## Installation
 
@@ -40,6 +32,30 @@ This is the contents of the published config file:
 
 ```php
 return [
+    /*
+     * Merchant ID: Elavon-assigned Converge account ID.
+     */
+    'merchant_id' => env('CONVERGE_MERCHANT_ID', ''),
+
+    /*
+     * Converge User ID: The user ID with Hosted Payment API User status that
+     * can send transaction requests through the terminal.
+     */
+    'user_id'     => env('CONVERGE_USER_ID', ''),
+
+    /*
+     * Terminal ID: Unique identifier of the terminal that will process the 
+     * transaction request and submit to the Converge gateway.
+     * 
+     * Important: The ssl_user_id sending the transaction request must be 
+     * associated with the terminal that will process the request.
+     */
+    'pin'         => env('CONVERGE_PIN', ''),
+
+    /*
+     * Demo / Live Site
+     */
+    'demo'        => env('CONVERGE_DEMO', true),
 ];
 ```
 
@@ -70,7 +86,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Nathan Bomshteyn](https://github.com/treestoneit)
+- [Bomshteyn Consulting](https://github.com/treestoneit)
 - [All Contributors](../../contributors)
 
 ## License
