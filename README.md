@@ -1,7 +1,6 @@
 # Laravel Elavon / Converge API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/treestoneit/laravel-converge-api.svg?style=flat-square)](https://packagist.org/packages/treestoneit/laravel-converge-api)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/treestoneit/laravel-converge-api/run-tests?label=tests)](https://github.com/treestoneit/laravel-converge-api/actions?query=workflow%3ATests+branch%3Amaster)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/treestoneit/laravel-converge-api/Check%20&%20fix%20styling?label=code%20style)](https://github.com/treestoneit/laravel-converge-api/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/treestoneit/laravel-converge-api.svg?style=flat-square)](https://packagist.org/packages/treestoneit/laravel-converge-api)
 
@@ -56,15 +55,20 @@ return [
 ## Usage
 
 ```php
-$laravel-converge-api = new Treestoneit\LaravelConvergeApi();
-echo $laravel-converge-api->echoPhrase('Hello, Treestoneit!');
+    $converge = app(\Treestoneit\LaravelConvergeApi\Converge::class);
+
+    $createSale = $converge->authOnly([
+        'ssl_card_number' => '5121212121212124',
+        'ssl_exp_date' => '0325',
+        'ssl_cvv2cvc2' => '321',
+        'ssl_amount' => '250.00',
+        'ssl_add_token' => 'Y',
+    ]);
 ```
 
 ## Testing
 
-```bash
-composer test
-```
+On our todo list :-)
 
 ## Changelog
 
@@ -79,6 +83,8 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
+
+This package is built as a Laravel wrapper for the [PHP Converge API](https://github.com/wwwroth/php-converge-api) built by [Phillip Roth](https://github.com/wwwroth)
 
 - [Bomshteyn Consulting](https://github.com/treestoneit)
 - [All Contributors](../../contributors)
