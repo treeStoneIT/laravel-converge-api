@@ -16,16 +16,10 @@ You can install the package via composer:
 composer require treestoneit/laravel-converge-api
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Treestoneit\LaravelConvergeApi\LaravelConvergeApiServiceProvider" --tag="laravel-converge-api-migrations"
-php artisan migrate
-```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Treestoneit\LaravelConvergeApi\LaravelConvergeApiServiceProvider" --tag="laravel-converge-api-config"
+php artisan vendor:publish --provider="Treestoneit\LaravelConvergeApi\LaravelConvergeApiServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:

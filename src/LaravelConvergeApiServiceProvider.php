@@ -2,24 +2,50 @@
 
 namespace Treestoneit\LaravelConvergeApi;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Treestoneit\LaravelConvergeApi\Commands\LaravelConvergeApiCommand;
+use Illuminate\Support\ServiceProvider;
 
-class LaravelConvergeApiServiceProvider extends PackageServiceProvider
+class LaravelConvergeApiServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
+
+    public function boot()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('laravel-converge-api')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_converge_api_table')
-            ->hasCommand(LaravelConvergeApiCommand::class);
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/converge-api.php' => config_path('converge-api.php'),
+            ], 'config');
+        }
     }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/converge-api.php', 'converge-api'
+        );
+
+        $this->app->bind('converge', function($app) {
+            return new Converge();
+        });
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['converge'];
+    }
+
 }

@@ -11,6 +11,6 @@ class LaravelConvergeApiFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'laravel-converge-api';
+        return 'converge';
     }
 }

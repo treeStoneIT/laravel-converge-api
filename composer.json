@@ -16,7 +16,8 @@
     "require": {
         "php": "^7.4|^8.0",
         "spatie/laravel-package-tools": "^1.1",
-        "illuminate/contracts": "^8.0"
+        "illuminate/contracts": "^8.0",
+        "wwwroth/php-converge-api": "dev-master"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -24,10 +25,15 @@
         "spatie/laravel-ray": "^1.9",
         "vimeo/psalm": "^4.4"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bomshteyn/php-converge-api"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "Treestoneit\\LaravelConvergeApi\\": "src",
-            "Treestoneit\\LaravelConvergeApi\\Database\\Factories\\": "database/factories"
+            "Treestoneit\\LaravelConvergeApi\\": "src"
         }
     },
     "autoload-dev": {
@@ -49,7 +55,7 @@
                 "Treestoneit\\LaravelConvergeApi\\LaravelConvergeApiServiceProvider"
             ],
             "aliases": {
-                "LaravelConvergeApi": "Treestoneit\\LaravelConvergeApi\\LaravelConvergeApiFacade"
+                "converge": "Treestoneit\\LaravelConvergeApi\\LaravelConvergeApiFacade"
             }
         }
     },
