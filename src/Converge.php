@@ -4,7 +4,6 @@ namespace Treestoneit\LaravelConvergeApi;
 
 use Illuminate\Support\Facades\Config;
 use wwwroth\Converge\Converge as ConvergePHP;
-use wwwroth\Converge\Exceptions\ConvergeException;
 
 class Converge
 {
@@ -14,9 +13,9 @@ class Converge
     {
         $this->converge = new ConvergePHP([
             'merchant_id' => Config::get('converge-api.merchant_id'),
-            'user_id'     => Config::get('converge-api.user_id'),
-            'pin'         => Config::get('converge-api.pin'),
-            'demo'        => Config::get('converge-api.demo'),
+            'user_id' => Config::get('converge-api.user_id'),
+            'pin' => Config::get('converge-api.pin'),
+            'demo' => Config::get('converge-api.demo'),
         ]);
     }
 
@@ -114,5 +113,4 @@ class Converge
     {
         return $this->converge->request('ccquerytoken', $params);
     }
-
 }

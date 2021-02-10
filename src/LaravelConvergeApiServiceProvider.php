@@ -30,10 +30,11 @@ class LaravelConvergeApiServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/converge-api.php', 'converge-api'
+            __DIR__.'/../config/converge-api.php',
+            'converge-api'
         );
 
-        $this->app->bind('converge', function($app) {
+        $this->app->bind('converge', function ($app) {
             return new Converge();
         });
     }
@@ -47,5 +48,4 @@ class LaravelConvergeApiServiceProvider extends ServiceProvider
     {
         return ['converge'];
     }
-
 }
