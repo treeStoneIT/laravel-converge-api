@@ -2,7 +2,9 @@
     "name": "treestoneit/laravel-converge-api",
     "description": "Laravel wrapper for Converge's payment API",
     "keywords": [
-        "laravel-converge-api"
+        "laravel",
+        "converge",
+        "elavon"
     ],
     "homepage": "https://github.com/treestoneit/laravel-converge-api",
     "license": "MIT",
