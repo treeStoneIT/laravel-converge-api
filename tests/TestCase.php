@@ -11,10 +11,6 @@ class TestCase extends Orchestra
     public function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Bomshteyn Consulting\\LaravelConvergeApi\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
