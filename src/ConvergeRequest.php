@@ -29,7 +29,7 @@ class ConvergeRequest
         if (isset($settings['demo']) && $settings['demo'] == true) {
             $this->demo = true;
             $this->xmlEndpoint = "https://api.demo.convergepay.com/VirtualMerchantDemo/process.do";
-        }  else {
+        } else {
             $this->demo = false;
             $this->xmlEndpoint = "https://api.convergepay.com/VirtualMerchant/process.do";
         }
@@ -54,15 +54,16 @@ class ConvergeRequest
      */
     private function validateSettings(array $settings): bool
     {
-        if (!isset($settings['merchant_id'])) {
+        if (! isset($settings['merchant_id'])) {
             throw new ConvergeException('Please provide a valid merchant id in settings.');
         }
-        if (!isset($settings['user_id'])) {
+        if (! isset($settings['user_id'])) {
             throw new ConvergeException('Please provide a valid user id in settings.');
         }
-        if (!isset($settings['pin'])) {
+        if (! isset($settings['pin'])) {
             throw new ConvergeException('Please provide a valid pin in settings.');
         }
+
         return true;
     }
 
@@ -87,7 +88,9 @@ class ConvergeRequest
         $response = [];
         foreach (explode("\n", curl_exec($ch)) as $part) {
             $pParts = explode('=', $part);
-            if (isset($pParts[1])) $response[$pParts[0]] = $pParts[1];
+            if (isset($pParts[1])) {
+                $response[$pParts[0]] = $pParts[1];
+            }
         }
 
         isset($response['errorCode']) ? $response['success'] = false : $response['success'] = true;
