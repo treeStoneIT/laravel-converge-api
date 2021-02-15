@@ -3,7 +3,6 @@
 namespace Treestoneit\LaravelConvergeApi;
 
 use Illuminate\Support\Facades\Config;
-use wwwroth\Converge\Converge as ConvergePHP;
 
 class Converge
 {
@@ -12,11 +11,11 @@ class Converge
      * Full documentation can be found here:
      * @link https://developer.elavon.com/na/docs/converge/1.0.0/integration-guide/transaction_types/credit_card
      */
-    public ConvergePHP $converge;
+    public ConvergeRequest $converge;
 
     public function __construct()
     {
-        $this->converge = new ConvergePHP([
+        $this->converge = new ConvergeRequest([
             'merchant_id' => Config::get('converge-api.merchant_id'),
             'user_id' => Config::get('converge-api.user_id'),
             'pin' => Config::get('converge-api.pin'),
@@ -32,7 +31,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function authOnly(array $params): array
     {
@@ -47,7 +45,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function sale(array $params): array
     {
@@ -62,7 +59,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function verify(array $params): array
     {
@@ -77,7 +73,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function balanceInquiry(array $params): array
     {
@@ -94,7 +89,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function return(array $params): array
     {
@@ -109,7 +103,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function void(array $params): array
     {
@@ -124,7 +117,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function complete(array $params): array
     {
@@ -141,7 +133,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function delete(array $params): array
     {
@@ -156,7 +147,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function updateTip(array $params): array
     {
@@ -171,7 +161,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function signature(array $params): array
     {
@@ -186,7 +175,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function addRecurring(array $params): array
     {
@@ -201,7 +189,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function updateRecurring(array $params): array
     {
@@ -216,7 +203,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function deleteRecurring(array $params): array
     {
@@ -231,7 +217,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function recurringSale(array $params): array
     {
@@ -246,7 +231,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function addInstallment(array $params): array
     {
@@ -261,7 +245,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function updateInstallment(array $params): array
     {
@@ -276,7 +259,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function deleteInstallment(array $params): array
     {
@@ -291,7 +273,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function installmentSale(array $params): array
     {
@@ -306,7 +287,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function queryToken(array $params): array
     {
@@ -321,7 +301,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function updateToken(array $params): array
     {
@@ -336,7 +315,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function getToken(array $params): array
     {
@@ -351,7 +329,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function deleteToken(array $params): array
     {
@@ -366,7 +343,6 @@ class Converge
      * @param array $params
      *
      * @return array
-     * @throws \wwwroth\Converge\Exceptions\ConvergeException
      */
     public function custom(string $transactionType, array $params): array
     {
