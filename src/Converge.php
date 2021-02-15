@@ -2,8 +2,8 @@
 
 namespace Treestoneit\LaravelConvergeApi;
 
+use ConvergeRequest;
 use Illuminate\Support\Facades\Config;
-use wwwroth\Converge\Converge as ConvergePHP;
 
 class Converge
 {
@@ -12,11 +12,11 @@ class Converge
      * Full documentation can be found here:
      * @link https://developer.elavon.com/na/docs/converge/1.0.0/integration-guide/transaction_types/credit_card
      */
-    public ConvergePHP $converge;
+    public ConvergeRequest $converge;
 
     public function __construct()
     {
-        $this->converge = new ConvergePHP([
+        $this->converge = new ConvergeRequest([
             'merchant_id' => Config::get('converge-api.merchant_id'),
             'user_id' => Config::get('converge-api.user_id'),
             'pin' => Config::get('converge-api.pin'),
