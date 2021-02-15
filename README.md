@@ -84,7 +84,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-This package is built as a Laravel wrapper for the [PHP Converge API](https://github.com/wwwroth/php-converge-api) built by [Phillip Roth](https://github.com/wwwroth)
+This package is built as a Laravel wrapper using the code in [PHP Converge API](https://github.com/wwwroth/php-converge-api) built by [Phillip Roth](https://github.com/wwwroth)
 
 - [Bomshteyn Consulting](https://github.com/treestoneit)
 - [All Contributors](../../contributors)

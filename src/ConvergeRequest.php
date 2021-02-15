@@ -1,5 +1,7 @@
 <?php
 
+namespace Treestoneit\LaravelConvergeApi;
+
 class ConvergeRequest
 {
     private string $merchant_id;
@@ -7,11 +9,14 @@ class ConvergeRequest
     private string $pin;
     private bool $demo;
 
-    private $xmlEndpoint;
+    private string $xmlEndpoint;
 
     /**
      * Construct Converge Request object with provided settings.
+     *
      * @param array $settings
+     *
+     * @throws \Treestoneit\LaravelConvergeApi\ConvergeException
      */
     public function __construct(array $settings)
     {
@@ -35,9 +40,8 @@ class ConvergeRequest
      * @param $transactionType
      * @param array $parameters
      * @return array
-     * @throws ConvergeException
      */
-    public function request($transactionType, array $parameters)
+    public function request($transactionType, array $parameters): array
     {
         return $this->httpRequest(array_merge(['ssl_transaction_type' => $transactionType], $parameters));
     }
@@ -48,7 +52,7 @@ class ConvergeRequest
      * @return bool
      * @throws ConvergeException
      */
-    private function validateSettings(array $settings)
+    private function validateSettings(array $settings): bool
     {
         if (!isset($settings['merchant_id'])) {
             throw new ConvergeException('Please provide a valid merchant id in settings.');
@@ -66,7 +70,7 @@ class ConvergeRequest
      * @param $parameters
      * @return array
      */
-    private function httpRequest($parameters)
+    private function httpRequest($parameters): array
     {
         $parameters['ssl_merchant_id'] = $this->merchant_id;
         $parameters['ssl_user_id'] = $this->user_id;
