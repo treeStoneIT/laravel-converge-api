@@ -1,7 +1,7 @@
 # Laravel Elavon / Converge API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/treestoneit/laravel-converge-api.svg?style=flat-square)](https://packagist.org/packages/treestoneit/laravel-converge-api)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/treestoneit/laravel-converge-api/Check%20&%20fix%20styling?label=code%20style)](https://github.com/treestoneit/laravel-converge-api/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![Fix PHP code style issues](https://github.com/treeStoneIT/laravel-converge-api/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/treeStoneIT/laravel-converge-api/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/treestoneit/laravel-converge-api.svg?style=flat-square)](https://packagist.org/packages/treestoneit/laravel-converge-api)
 
 
