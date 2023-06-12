@@ -13,6 +13,9 @@ class Converge
      */
     public ConvergeRequest $converge;
 
+    /**
+     * @throws \Treestoneit\LaravelConvergeApi\ConvergeException
+     */
     public function __construct()
     {
         $this->converge = new ConvergeRequest([

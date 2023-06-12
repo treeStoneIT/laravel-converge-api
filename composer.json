@@ -16,13 +16,13 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.2",
         "ext-curl": "*",
         "spatie/laravel-package-tools": "^1.1",
-        "illuminate/contracts": "^8.0"
+        "illuminate/contracts": "^10.13.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
+        "orchestra/testbench": "^8.5.6",
         "phpunit/phpunit": "^9.3",
         "spatie/laravel-ray": "^1.9",
         "vimeo/psalm": "^4.4"
