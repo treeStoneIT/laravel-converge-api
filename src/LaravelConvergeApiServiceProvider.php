@@ -17,7 +17,7 @@ class LaravelConvergeApiServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/converge-api.php' => config_path('converge-api.php'),
+                __DIR__.'/../config/converge-api.php' => config_path('converge-api.php'),
             ], 'config');
         }
     }

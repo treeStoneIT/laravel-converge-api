@@ -5,8 +5,11 @@ namespace Treestoneit\LaravelConvergeApi;
 class ConvergeRequest
 {
     private string $merchant_id;
+
     private string $user_id;
+
     private string $pin;
+
     private bool $demo;
 
     private string $xmlEndpoint;
@@ -14,7 +17,6 @@ class ConvergeRequest
     /**
      * Construct Converge Request object with provided settings.
      *
-     * @param array $settings
      *
      * @throws \Treestoneit\LaravelConvergeApi\ConvergeException
      */
@@ -28,18 +30,15 @@ class ConvergeRequest
 
         if (isset($settings['demo']) && $settings['demo'] == true) {
             $this->demo = true;
-            $this->xmlEndpoint = "https://api.demo.convergepay.com/VirtualMerchantDemo/process.do";
+            $this->xmlEndpoint = 'https://api.demo.convergepay.com/VirtualMerchantDemo/process.do';
         } else {
             $this->demo = false;
-            $this->xmlEndpoint = "https://api.convergepay.com/VirtualMerchant/process.do";
+            $this->xmlEndpoint = 'https://api.convergepay.com/VirtualMerchant/process.do';
         }
     }
 
     /**
      * Make request to Converge with transaction type and parameters.
-     * @param $transactionType
-     * @param array $parameters
-     * @return array
      */
     public function request($transactionType, array $parameters): array
     {
@@ -48,8 +47,7 @@ class ConvergeRequest
 
     /**
      * Validate provided settings when constructing class.
-     * @param array $settings
-     * @return bool
+     *
      * @throws ConvergeException
      */
     private function validateSettings(array $settings): bool
@@ -67,10 +65,6 @@ class ConvergeRequest
         return true;
     }
 
-    /**
-     * @param $parameters
-     * @return array
-     */
     private function httpRequest($parameters): array
     {
         $parameters['ssl_merchant_id'] = $this->merchant_id;
