@@ -2,10 +2,6 @@
 
 All notable changes to `laravel-converge-api` will be documented in this file.
 
-## 2.1.0 - 2023-06-12
-
-* updated to support Laravel 10 and PHP 8.2
-
 ## 2.0.0 - 2021-02-15
 
 * Removed `wwwroth/php-converge-api` from the dependencies, and brought Converge request code into the package. This allows us more control. And existing `wwwroth/php-converge-api` package version was causing PSR4 errors.
