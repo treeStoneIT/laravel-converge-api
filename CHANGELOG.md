@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-converge-api` will be documented in this file.
 
+## v2.2.1 - 2024-10-29
+
+Minor release: cleanup and Pint run
+
 ## V2.2.0 - 2024-10-29
 
 ### What's Changed
@@ -13,7 +17,6 @@ All notable changes to `laravel-converge-api` will be documented in this file.
 * @shcherse made their first contribution in https://github.com/treeStoneIT/laravel-converge-api/pull/3
 
 **Full Changelog**: https://github.com/treeStoneIT/laravel-converge-api/compare/v2.1.1...2.2.0
-
 
 ## v2.1.1 - 2023-06-12
 
