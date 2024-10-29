@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-converge-api` will be documented in this file.
 
+## v2.2.0 - 2024-10-29
+
+updated to support Laravel 11
+
 ## v2.1.1 - 2023-06-12
 
 updated to support Laravel 10
