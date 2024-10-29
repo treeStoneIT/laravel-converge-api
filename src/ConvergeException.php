@@ -2,6 +2,4 @@
 
 namespace Treestoneit\LaravelConvergeApi;
 
-class ConvergeException extends \Exception
-{
-}
+class ConvergeException extends \Exception {}

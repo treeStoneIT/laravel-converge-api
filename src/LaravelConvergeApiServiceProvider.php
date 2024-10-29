@@ -8,10 +8,8 @@ class LaravelConvergeApiServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
      */
-    protected $defer = false;
+    protected bool $defer = false;
 
     public function boot()
     {
@@ -24,27 +22,21 @@ class LaravelConvergeApiServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(
             __DIR__.'/../config/converge-api.php',
             'converge-api'
         );
 
-        $this->app->bind('converge', function ($app) {
-            return new Converge();
-        });
+        $this->app->bind('converge', fn () => new Converge);
     }
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['converge'];
     }

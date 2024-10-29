@@ -50,7 +50,7 @@ class ConvergeRequest
      *
      * @throws ConvergeException
      */
-    private function validateSettings(array $settings): bool
+    private function validateSettings(array $settings): void
     {
         if (! isset($settings['merchant_id'])) {
             throw new ConvergeException('Please provide a valid merchant id in settings.');
@@ -62,7 +62,6 @@ class ConvergeRequest
             throw new ConvergeException('Please provide a valid pin in settings.');
         }
 
-        return true;
     }
 
     private function httpRequest($parameters): array
