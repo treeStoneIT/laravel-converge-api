@@ -6,7 +6,7 @@ All notable changes to `laravel-converge-api` will be documented in this file.
 
 ### What's Changed
 
-* Update package to version 2.2.0 by @shcherse in https://github.com/treeStoneIT/laravel-converge-api/pull/3
+* Update package to support Laravel 11 by @shcherse in https://github.com/treeStoneIT/laravel-converge-api/pull/3
 
 ### New Contributors
 
@@ -14,9 +14,6 @@ All notable changes to `laravel-converge-api` will be documented in this file.
 
 **Full Changelog**: https://github.com/treeStoneIT/laravel-converge-api/compare/v2.1.1...2.2.0
 
-## v2.2.0 - 2024-10-29
-
-updated to support Laravel 11
 
 ## v2.1.1 - 2023-06-12
 
