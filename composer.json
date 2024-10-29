@@ -19,7 +19,7 @@
         "php": "^8.2",
         "ext-curl": "*",
         "spatie/laravel-package-tools": "^1.1",
-        "illuminate/contracts": "^10.13.0"
+        "illuminate/contracts": "^10.13|^11.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
