@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-converge-api` will be documented in this file.
 
+## V2.2.2 - 2025-07-30
+
+Minor release: Compatible with Laravel 12
+
 ## v2.2.1 - 2024-10-29
 
 Minor release: cleanup and Pint run
